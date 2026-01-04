@@ -1,0 +1,103 @@
+.apps-page {
+  background-color: #f4f6fa;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.apps-content {
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.apps-section {
+  margin-bottom: 32px;
+}
+
+.apps-section h2 {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.new-app-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.new-app-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.app-icon-box {
+  width: 40px;
+  height: 40px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.app-info {
+  flex: 1;
+}
+
+.app-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.app-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.arrow-icon {
+  color: #cbd5e1;
+}
+
+.status-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #cbd5e1;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.app-id {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.status-badge.pending { background: #ffedd5; color: #c2410c; }
+.status-badge.approved { background: #dcfce7; color: #15803d; }
+
+.status-footer { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #64748b; margin-top: 8px; }

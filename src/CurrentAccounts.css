@@ -1,0 +1,41 @@
+.current-page { background-color: #fff; min-height: 100vh; }
+.current-content { padding: 24px; max-width: 800px; margin: 0 auto; }
+
+.hero-banner {
+  background: #111827;
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.hero-banner h2 { margin: 0 0 10px 0; font-size: 2rem; }
+.hero-banner p { opacity: 0.8; margin: 0; }
+
+.benefits-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 40px; }
+.benefit-item { display: flex; gap: 16px; align-items: flex-start; }
+.b-icon { color: #2563eb; min-width: 24px; }
+.benefit-item h4 { margin: 0 0 4px 0; color: #1e293b; }
+.benefit-item p { margin: 0; font-size: 0.9rem; color: #64748b; }
+
+.comparison-table { margin-bottom: 40px; overflow-x: auto; }
+.comparison-table h3 { margin-bottom: 16px; color: #1e293b; }
+.comparison-table table { width: 100%; border-collapse: collapse; }
+.comparison-table th { text-align: left; padding: 12px; background: #f8fafc; color: #475569; font-size: 0.9rem; }
+.comparison-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+
+.apply-btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.apply-btn:hover { background: #1d4ed8; }

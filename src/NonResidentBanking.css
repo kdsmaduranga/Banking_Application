@@ -1,0 +1,92 @@
+.nrb-page {
+  background-color: #f0fdfa; /* Teal tint */
+  min-height: 100vh;
+}
+
+.nrb-content {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.world-connect-banner {
+  background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
+  border-radius: 20px;
+  padding: 32px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.2);
+}
+
+.globe-icon { opacity: 0.8; }
+.banner-text h2 { margin: 0 0 8px 0; font-size: 1.8rem; }
+.banner-text p { margin: 0; opacity: 0.9; }
+
+.nrb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.nrb-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: #0f766e; }
+.card-header h3 { margin: 0; }
+
+.input-row label, .result-row label { display: block; font-size: 0.9rem; color: #64748b; margin-bottom: 6px; }
+.input-row input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1.1rem; }
+
+.rate-display {
+  background: #f0fdfa;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #0d9488;
+}
+
+.result-value { font-size: 1.5rem; font-weight: 700; color: #111827; }
+
+.remit-btn {
+  width: 100%;
+  background: #0d9488;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.nrb-service-item {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.icon-box { background: #ccfbf1; color: #0f766e; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.service-info h4 { margin: 0 0 4px 0; color: #1e293b; }
+.service-info p { margin: 0; font-size: 0.85rem; color: #64748b; }
+
+.contact-agent {
+  margin-top: 32px;
+  text-align: center;
+  color: #475569;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}

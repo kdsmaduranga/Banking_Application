@@ -1,9 +1,10 @@
 // OnlineBankingHome.jsx
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronDown, DollarSign, CreditCard, Wrench, TrendingUp, Zap, FileText, MessageSquare, Briefcase } from 'lucide-react';
 
 // --- Feature Card Component (UNCHANGED) ---
+// eslint-disable-next-line no-unused-vars
 const FeatureCard = ({ icon: Icon, title, description, isPrimary = false }) => (
   <div className={`feature-card ${isPrimary ? 'primary-card' : 'secondary-card'}`}>
     <div className={`feature-card-icon-wrapper ${isPrimary ? 'primary-icon-bg' : 'secondary-icon-bg'}`}>
@@ -37,14 +38,14 @@ const DigitalBankingCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = slidesData.length;
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  }, [totalSlides]);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); 
     return () => clearInterval(interval); 
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div className="digital-banking-carousel-container">

@@ -1,10 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, MessageSquare, Briefcase } from 'lucide-react';
+import React, { useState } from 'react';
+import { MessageSquare, Bot } from 'lucide-react';
 
 import Home from "./pages/home";
 import GenZCreateAccountPage from './pages/createaccount'; // For creating new accounts
 import LoginPage from './pages/login'; // The new login page
 import Dashboard from './pages/dashboard'; // The new online banking dashboard
+import TransferMoney from './pages/TransferMoney';
+import PayBills from './pages/PayBills';
+import Deposit from './pages/Deposit';
+import Withdraw from './pages/Withdraw';
+import ManageCards from './pages/ManageCards';
+import Security from './pages/Security';
+import CurrencyConverter from './pages/CurrencyConverter';
+import RewardsPromotions from './pages/RewardsPromotions';
+import RatesTariffs from './pages/RatesTariffs';
+import ApplicationsPage from './pages/ApplicationsPage';
+import ImportantNotices from './pages/ImportantNotices';
+import AboutUsPage from './pages/AboutUsPage';
+import BranchesPage from './pages/BranchesPage';
+import InvestorsPage from './pages/InvestorsPage';
+import NewsPage from './pages/NewsPage';
+import CareersPage from './pages/CareersPage';
+import ContactUsPage from './pages/ContactUsPage';
+import OverseasPage from './pages/OverseasPage';
+import QuickLinksPage from './pages/QuickLinksPage';
+import ManagerLogin from './pages/ManagerLogin';
+import ManagerDashboard from './pages/ManagerDashboard';
+import SavingsAccounts from './pages/SavingsAccounts';
+import LoansPage from './pages/LoansPage';
+import CardsProductsPage from './pages/CardsProductsPage';
+import TermDepositsPage from './pages/TermDepositsPage';
+import CurrentAccountsPage from './pages/CurrentAccountsPage';
+import UniqueFeaturesPage from './UniqueFeaturesPage';
+import AdvancedBankingPage from './AdvancedBankingPage';
+
+import BusinessBanking from './BusinessBanking';
+import NonResidentBanking from './NonResidentBanking';
+import ServicesPage from './ServicesPage';
+import SupportPage from './SupportPage';
+import SettingsPage from './SettingsPage';
+import ChatBot from './ChatBot';
+import Navbar from './Navbar';
 
 // Define PAGE constants for clearer state management
 const PAGES = {
@@ -12,245 +48,92 @@ const PAGES = {
   CREATE_ACCOUNT: 'createAccount',
   LOGIN: 'login',
   DASHBOARD: 'dashboard',
-};
-
-// --- AI Assistant Component (No changes needed) ---
-const AIAssistant = ({ onClose }) => {
-  const [messages, setMessages] = useState([
-    { role: 'assistant', text: "Hello! I'm Chai, your AI Banking Assistant. How can I help you with your finances today? (e.g., 'What are the current interest rates?' or 'How do I apply for a loan?')" }
-  ]);
-  const [input, setInput] = useState('');
-
-  const handleSend = () => {
-    if (input.trim() === '') return;
-
-    const userMessage = { role: 'user', text: input };
-    setMessages(prevMessages => [...prevMessages, userMessage]);
-    setInput('');
-
-    // Simulate AI response (replace with actual API call)
-    const simulatedResponse = simulateAIResponse(input);
-
-    setTimeout(() => {
-      setMessages(prev => [...prev, { role: 'assistant', text: simulatedResponse }]);
-    }, 1000);
-  };
-
-  const simulateAIResponse = (query) => {
-    const lowerQuery = query.toLowerCase();
-    if (lowerQuery.includes('loan') || lowerQuery.includes('apply')) {
-      return "You can apply for a Business Loan right from the 'Applications' section. Would you like me to guide you there?";
-    } else if (lowerQuery.includes('rate') || lowerQuery.includes('interest')) {
-      return "Current Savings Account interest rates are 3.5% APY. Please check the 'Rates & Tariffs' page for detailed information.";
-    } else if (lowerQuery.includes('hello') || lowerQuery.includes('hi')) {
-      return "Hi there! I'm ready to assist you. What's on your mind?";
-    }
-    return "I'm still learning! For complex queries, please visit the 'Important Notices' or contact a human representative.";
-  };
-
-  return (
-    <div className="ai-assistant">
-      <div className="ai-assistant-header">
-        <div className="ai-assistant-title-group">
-          <MessageSquare size={18} />
-          <h3 className="ai-assistant-title">Chat with Chai!</h3>
-        </div>
-        <button onClick={onClose} className="ai-assistant-close-btn">
-          <X size={20} />
-        </button>
-        </div>
-        <div className="ai-assistant-messages custom-scrollbar">
-          {messages.map((msg, index) => (
-            <div key={index} className={`message-container ${msg.role === 'user' ? 'user' : 'assistant'}`}>
-              <div className={`message-bubble ${msg.role === 'user' ? 'user-bubble' : 'assistant-bubble'}`}>
-                {msg.text}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="ai-assistant-input-area">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-            placeholder="Type your question..."
-            className="ai-assistant-input"
-          />
-          <button
-            onClick={handleSend}
-            className="ai-assistant-send-btn"
-          >
-            Send
-          </button>
-        </div>
-      </div>
-  );
-};
-
-// --- Navbar Component (Modified to use onNavigate) ---
-const Navbar = ({ onNavigate }) => { // onNavigate is new prop
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('Personal Banking');
-
-  const navItems = [
-    'Personal Banking',
-    'Business Banking',
-    'Non Resident Banking',
-    'Services',
-  ];
-
-  const topLinks = [
-    { name: 'About us', href: '#' },
-    { name: 'Branches/ATMs', href: '#' },
-    { name: 'Investors', href: '#' },
-    { name: 'News', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'Contact us', href: '#' },
-    { name: 'Overseas Operations', href: '#' },
-  ];
-
-  return (
-    <nav className="navbar-container">
-      {/* Top Bar */}
-      <div className="navbar-topbar-wrapper">
-        <div className="navbar-content-wrapper navbar-topbar">
-          <div className="navbar-topbar-links">
-            {topLinks.map((item) => (
-              <a key={item.name} href={item.href} className="navbar-topbar-link">
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div className="navbar-topbar-actions">
-            <a href="#" className="navbar-topbar-link lang-select">
-              <span className="mr-1">🏳️</span> EN <ChevronDown size={12} className="ml-05" />
-            </a>
-            <a href="#" className="navbar-topbar-link accessibility-link">
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon-4 icon-w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 118 0v4m-4 5h4m-4 0v4m-4-4v4m-4-4h4m-4 0v4m-4-4h4m-4 0v4" />
-              </svg>
-              Accessibility Options
-            </a>
-            <button onClick={() => onNavigate(PAGES.LOGIN)} className="navbar-online-banking-btn">
-              Online Banking
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Nav Bar */}
-      <div className="navbar-content-wrapper navbar-main">
-        <div className="navbar-flex-container">
-          {/* Logo and Main Links */}
-          <div className="navbar-logo-links">
-            {/* Replaced Link with a button/div that calls onNavigate to HOME */}
-            <div onClick={() => onNavigate(PAGES.HOME)} className="navbar-logo clickable">
-              <span className="logo-color-accent">GenZ</span>Bank
-            </div>
-            <div className="navbar-links-desktop">
-              {navItems.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => setActiveTab(item)}
-                  className={`nav-item ${
-                    activeTab === item
-                      ? 'active'
-                      : ''
-                  }`}
-                >
-                  {item}
-                  {activeTab === item && (
-                    <span className="nav-item-underline"></span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Action Buttons (Desktop) */}
-          <div className="navbar-actions-desktop">
-            <button className="navbar-digital-banking-btn">
-              Digital Banking
-            </button>
-            <button className="navbar-commercial-btn">
-              <Briefcase size={16} className="mr-1" /> Commercial
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="navbar-mobile-menu-btn-container">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="navbar-mobile-menu-btn"
-            >
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu Panel */}
-      {isOpen && (
-        <div className="navbar-mobile-menu-panel">
-          <div className="navbar-mobile-links">
-            {navItems.map((item) => (
-              <button
-                key={item}
-                onClick={() => { setActiveTab(item); setIsOpen(false); }}
-                className="navbar-mobile-link"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-          <div className="navbar-mobile-actions">
-            <div className="navbar-mobile-actions-group">
-              <button className="navbar-mobile-digital-btn">
-                Digital Banking
-              </button>
-              <button className="navbar-mobile-commercial-btn">
-                Commercial
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
+  BUSINESS: 'business',
+  NRB: 'nrb',
+  SERVICES: 'services',
+  SUPPORT: 'support',
+  SETTINGS: 'settings',
+  ABOUT: 'about',
+  BRANCHES: 'branches',
+  INVESTORS: 'investors',
+  NEWS: 'news',
+  CAREERS: 'careers',
+  CONTACT: 'contact',
+  OVERSEAS: 'overseas',
+  QUICK_LINKS: 'quickLinks',
+  SAVINGS: 'savings',
+  LOANS: 'loans',
+  CARDS_PRODUCTS: 'cardsProducts',
+  DEPOSITS: 'deposits',
+  CURRENT: 'current',
+  UNIQUE_FEATURES: 'uniqueFeatures',
+  ADVANCED_BANKING: 'advancedBanking',
+  PAY_BILLS: 'payBills',
+  TRANSFER: 'transfer',
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
+  CARDS: 'cards',
+  SECURITY: 'security',
+  MANAGER_LOGIN: 'managerLogin',
+  MANAGER_DASHBOARD: 'managerDashboard',
 };
 
 // --- Footer Component (No changes needed) ---
-const Footer = () => {
+const Footer = ({ onNavigate, onOpenChat }) => {
   const footerLinks = [
     {
       title: 'Quick Links',
       links: [
-        'Correspondent Banks', 'CBSL - Customer Charter', 'Complaints and Grievances',
-        'Registering US Persons', 'Policies & Procedures', 'Properties for Sale',
-        'General Terms and Conditions',
+        { name: 'Correspondent Banks', page: PAGES.QUICK_LINKS },
+        { name: 'CBSL - Customer Charter', page: PAGES.QUICK_LINKS },
+        { name: 'Complaints and Grievances', page: PAGES.QUICK_LINKS },
+        { name: 'Registering US Persons', page: PAGES.QUICK_LINKS },
+        { name: 'Policies & Procedures', page: PAGES.QUICK_LINKS },
+        { name: 'Properties for Sale', page: PAGES.QUICK_LINKS },
+        { name: 'General Terms and Conditions', page: PAGES.QUICK_LINKS },
       ],
     },
     {
       title: 'About Us',
       links: [
-        'Our History', 'Achievements', 'Social Responsibility',
-        'Board of Directors', 'Corporate Management', 'Careers',
-        'Latest Market Watch Report',
+        { name: 'Our History', page: PAGES.ABOUT },
+        { name: 'Achievements', page: PAGES.ABOUT },
+        { name: 'Social Responsibility', page: PAGES.ABOUT },
+        { name: 'Board of Directors', page: PAGES.ABOUT },
+        { name: 'Corporate Management', page: PAGES.ABOUT },
+        { name: 'Careers', page: PAGES.CAREERS },
+        { name: 'Latest Market Watch Report', page: PAGES.NEWS },
       ],
     },
     {
       title: 'Personal Banking',
-      links: ['Savings Accounts', 'Deposits', 'Current Accounts', 'Cards', 'Loans'],
+      links: [
+        { name: 'Savings Accounts', page: PAGES.SAVINGS },
+        { name: 'Deposits', page: PAGES.DEPOSITS },
+        { name: 'Current Accounts', page: PAGES.CURRENT },
+        { name: 'Cards', page: PAGES.CARDS_PRODUCTS },
+        { name: 'Loans', page: PAGES.LOANS }
+      ],
     },
     {
       title: 'Business Banking',
-      links: ['Corporate Banking', 'Trade Finance', 'Treasury', 'SME', 'Investment Banking'],
+      links: [
+        { name: 'Corporate Banking', page: PAGES.BUSINESS },
+        { name: 'Trade Finance', page: PAGES.BUSINESS },
+        { name: 'Treasury', page: PAGES.BUSINESS },
+        { name: 'SME', page: PAGES.BUSINESS },
+        { name: 'Investment Banking', page: PAGES.BUSINESS }
+      ],
     },
     {
       title: 'Non Resident Banking',
-      links: ['Savings Accounts', 'Deposits', 'Loans', 'Investments', 'Sending Money'],
+      links: [
+        { name: 'Savings Accounts', page: PAGES.NRB },
+        { name: 'Deposits', page: PAGES.NRB },
+        { name: 'Loans', page: PAGES.NRB },
+        { name: 'Investments', page: PAGES.NRB },
+        { name: 'Sending Money', page: PAGES.NRB }
+      ],
     },
   ];
 
@@ -289,21 +172,36 @@ const Footer = () => {
               <ul className="footer-links-list">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a href="#" className="footer-link-item">
-                      {link}
-                    </a>
+                    <button onClick={() => onNavigate(link.page)} className="footer-link-item" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left', color: '#cbd5e1' }}>
+                      {link.name}
+                    </button>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
           {/* AI Assistant Image Placeholder in Footer */}
-          <div className="footer-ai-placeholder">
-            <div className="footer-ai-placeholder-content">
-              <div className="footer-ai-placeholder-text">
-                Chat with Chai!
-              </div>
-            </div>
+          <div 
+            className="footer-ai-placeholder" 
+            onClick={onOpenChat} 
+            style={{ 
+              cursor: 'pointer',
+              background: '#4a00e0',
+              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '30px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px',
+              fontWeight: '600',
+              boxShadow: '0 4px 15px rgba(74, 0, 224, 0.4)',
+              transition: 'all 0.3s ease',
+              marginTop: '10px',
+              width: 'fit-content'
+            }}
+          >
+            <Bot size={24} />
+            <span>GenZBank Chatbot</span>
           </div>
         </div>
 
@@ -319,51 +217,112 @@ const Footer = () => {
 
 // --- Main App Component (Now manages page state) ---
 const App = () => {
-  const [isAIChatOpen, setIsAIChatOpen] = useState(false);
   // State to manage which 'page' is currently displayed (replacing React Router)
   const [currentPage, setCurrentPage] = useState(PAGES.HOME); 
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const handleNavigate = (page, userData) => {
+    setCurrentPage(page);
+    if (userData) {
+      setUser(userData);
+    }
+    window.scrollTo(0, 0);
+  };
 
   // Function to determine which component to render
   const renderPage = () => {
     switch (currentPage) {
       case PAGES.CREATE_ACCOUNT:
-        return <GenZCreateAccountPage onNavigate={setCurrentPage} PAGES={PAGES} />;
+        return <GenZCreateAccountPage onNavigate={handleNavigate} PAGES={PAGES} />;
       case PAGES.LOGIN:
-        return <LoginPage onNavigate={setCurrentPage} PAGES={PAGES} />;
+        return <LoginPage onNavigate={handleNavigate} PAGES={PAGES} />;
       case PAGES.DASHBOARD:
-        return <Dashboard onNavigate={setCurrentPage} PAGES={PAGES} />;
+        return <Dashboard user={user} onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.TRANSFER:
+        return <TransferMoney onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.PAY_BILLS:
+        return <PayBills onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.DEPOSIT:
+        return <Deposit user={user} onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.WITHDRAW:
+        return <Withdraw onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.CARDS:
+        return <ManageCards onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.SECURITY:
+        return <Security onNavigate={handleNavigate} PAGES={PAGES} />;
+      case 'currencyConverter':
+        return <CurrencyConverter onNavigate={handleNavigate} PAGES={PAGES} />;
+      case 'rewards':
+        return <RewardsPromotions onNavigate={handleNavigate} PAGES={PAGES} />;
+      case 'rates':
+        return <RatesTariffs onNavigate={handleNavigate} PAGES={PAGES} />;
+      case 'applications':
+        return <ApplicationsPage onNavigate={handleNavigate} />;
+      case 'notices':
+        return <ImportantNotices onNavigate={handleNavigate} />;
+      case PAGES.BUSINESS:
+        return <BusinessBanking onNavigate={handleNavigate} />;
+      case PAGES.NRB:
+        return <NonResidentBanking onNavigate={handleNavigate} />;
+      case PAGES.SERVICES:
+        return <ServicesPage onNavigate={handleNavigate} />;
+      case PAGES.SUPPORT:
+        return <SupportPage onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.SETTINGS:
+        return <SettingsPage onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.ABOUT:
+        return <AboutUsPage onNavigate={handleNavigate} />;
+      case PAGES.BRANCHES:
+        return <BranchesPage onNavigate={handleNavigate} />;
+      case PAGES.INVESTORS:
+        return <InvestorsPage onNavigate={handleNavigate} />;
+      case PAGES.NEWS:
+        return <NewsPage onNavigate={handleNavigate} />;
+      case PAGES.CAREERS:
+        return <CareersPage onNavigate={handleNavigate} />;
+      case PAGES.CONTACT:
+        return <ContactUsPage onNavigate={handleNavigate} />;
+      case PAGES.OVERSEAS:
+        return <OverseasPage onNavigate={handleNavigate} />;
+      case PAGES.QUICK_LINKS:
+        return <QuickLinksPage onNavigate={handleNavigate} />;
+      case PAGES.SAVINGS:
+        return <SavingsAccounts onNavigate={handleNavigate} />;
+      case PAGES.LOANS:
+        return <LoansPage onNavigate={handleNavigate} />;
+      case PAGES.CARDS_PRODUCTS:
+        return <CardsProductsPage onNavigate={handleNavigate} />;
+      case PAGES.DEPOSITS:
+        return <TermDepositsPage onNavigate={handleNavigate} />;
+      case PAGES.CURRENT:
+        return <CurrentAccountsPage onNavigate={handleNavigate} />;
+      case PAGES.UNIQUE_FEATURES:
+        return <UniqueFeaturesPage onNavigate={handleNavigate} />;
+      case PAGES.ADVANCED_BANKING:
+        return <AdvancedBankingPage onNavigate={handleNavigate} />;
+      case PAGES.MANAGER_LOGIN:
+        return <ManagerLogin onNavigate={handleNavigate} PAGES={PAGES} />;
+      case PAGES.MANAGER_DASHBOARD:
+        return <ManagerDashboard onNavigate={handleNavigate} PAGES={PAGES} />;
       case PAGES.HOME:
       default:
-        return <Home onNavigate={setCurrentPage} PAGES={PAGES} />;
+        return <Home onNavigate={handleNavigate} PAGES={PAGES} />;
     }
   };
 
   return (
     <div className="app-container">
       {/* Pass the navigation function down to Navbar */}
-      <Navbar onNavigate={setCurrentPage} /> 
+      <Navbar onNavigate={handleNavigate} PAGES={PAGES} /> 
 
       {/* Conditionally render the selected page */}
       {renderPage()}
 
-      <Footer />
+      <Footer onNavigate={handleNavigate} onOpenChat={() => setIsChatOpen(true)} />
 
       {/* Floating AI Assistant Button/Widget */}
-      <div className="ai-float-widget-wrapper">
-        {isAIChatOpen ? (
-          <div className="ai-chat-open">
-            <AIAssistant onClose={() => setIsAIChatOpen(false)} />
-          </div>
-        ) : (
-          <button
-            onClick={() => setIsAIChatOpen(true)}
-            className="ai-chat-button"
-            title="Chat with AI Assistant"
-          >
-            <MessageSquare size={30} />
-          </button>
-        )}
-      </div>
+      <ChatBot onNavigate={handleNavigate} isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
     </div>
   );
 };

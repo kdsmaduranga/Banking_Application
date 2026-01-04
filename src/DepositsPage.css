@@ -1,0 +1,41 @@
+.deposits-page { background-color: #f8fafc; min-height: 100vh; }
+.deposits-content { padding: 24px; max-width: 600px; margin: 0 auto; }
+
+.fd-calculator {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+.fd-calculator h3 { margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px; color: #1e293b; }
+
+.input-group { margin-bottom: 16px; }
+.input-group label { display: block; font-size: 0.9rem; color: #64748b; margin-bottom: 6px; }
+.input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+
+.fd-result {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+.res-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; color: #475569; }
+.res-row.total { margin-top: 12px; padding-top: 12px; border-top: 1px dashed #cbd5e1; font-size: 1.1rem; color: #0f172a; }
+
+.action-btn {
+  width: 100%;
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.action-btn:hover { background: #1e293b; }
+
+.rates-info { background: white; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+.rates-info h3 { margin: 0 0 16px 0; font-size: 1.1rem; color: #1e293b; }
+.rates-info ul { list-style: none; padding: 0; margin: 0; }
+.rates-info li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #475569; }

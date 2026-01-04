@@ -1,0 +1,134 @@
+/* Root */
+.dashboard.advanced {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: #f4f6fa;
+}
+
+/* Sidebar */
+.advanced-sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #4a00e0, #8e2de2);
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.advanced-sidebar .logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 30px; }
+.advanced-sidebar nav button {
+  display: flex; align-items: center; gap: 10px;
+  background: transparent; border: none; color: #fff;
+  padding: 12px 10px; margin-bottom: 10px; border-radius: 8px;
+  cursor: pointer; transition: background 0.3s;
+}
+.advanced-sidebar nav button:hover { background: rgba(255,255,255,0.1); }
+
+.sidebar-ad {
+  margin-top: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 20px;
+}
+.sidebar-ad h4 { color: #ffd700; margin: 0 0 8px 0; font-size: 0.95rem; }
+.sidebar-ad p { font-size: 0.8rem; margin: 0 0 12px 0; opacity: 0.9; line-height: 1.4; }
+.ad-btn {
+  background: white; color: #4a00e0; border: none; padding: 8px; border-radius: 8px;
+  font-size: 0.8rem; font-weight: bold; cursor: pointer; width: 100%; transition: transform 0.2s;
+}
+.ad-btn:hover { transform: scale(1.02); }
+
+.advanced-sidebar .logout {
+  margin-top: auto; display: flex; align-items: center; gap: 10px;
+  background: #ff4b5c; padding: 10px; border-radius: 8px; cursor: pointer;
+}
+
+/* Main Content */
+.advanced-main {
+  flex: 1; padding: 25px 30px; overflow-y: auto;
+}
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.cards-overview { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
+.account-card { background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 20px; flex: 2; min-width: 300px; }
+.gradient-card { background: linear-gradient(135deg, #667eea, #764ba2); color: black; }
+.account-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.status.active { color: #4caf50; font-weight: bold; }
+.status.inactive { color: #ff9800; font-weight: bold; }
+
+.balance h2 { font-size: 2rem; margin: 10px 0; }
+.balance p, .balance span { font-size: 0.9rem; }
+
+.quick-stats { display: flex; gap: 20px; flex: 1; flex-wrap: wrap; }
+.stat-card { flex: 1; background: #fff; border-radius: 12px; padding: 15px 20px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); }
+/* Quick Stats Cards */
+.quick-stats .stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    color: #000; /* <-- Make text black */
+}
+
+.quick-stats .stat-card h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #000; /* <-- Make header black */
+}
+
+.quick-stats .stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000; /* <-- Make number black */
+}
+
+.actions { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+.action-btn {
+  flex: 1; min-width: 150px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 12px; border-radius: 12px; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  cursor: pointer; font-weight: 500; transition: transform 0.2s;
+}
+.action-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+.transactions-card { background: #fff; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.transactions-card h3 { margin-bottom: 15px; }
+.transactions { list-style: none; padding: 0; margin: 0; }
+.transaction-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+.transaction-item:last-child { border-bottom: none; }
+.tx-amount.credit { color: #4caf50; font-weight: bold; }
+.tx-amount.debit { color: #ff4b5c; font-weight: bold; }
+.tx-date { font-size: 0.75rem; color: #888; display: block; margin-top: 2px; }
+.view-btn { margin-top: 15px; padding: 10px 20px; border-radius: 10px; border: none; background: #667eea; color: #fff; cursor: pointer; transition: background 0.3s; }
+.view-btn:hover { background: #5a67d8; }
+
+.dashboard-loading { text-align: center; font-size: 1.2rem; padding: 50px; }
+
+/* Chatbot Button */
+.chatbot-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4a00e0;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(74, 0, 224, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.chatbot-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(74, 0, 224, 0.6);
+}

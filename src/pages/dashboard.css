@@ -1,0 +1,193 @@
+/* Global */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+}
+
+/* Layout */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  color: #e6eef8; /* light text for dark background */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #020617;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #e6eef8;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #e6eef8;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+.logout {
+  margin-top: auto;
+  background: #7c2d12;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: #9a3412;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  color: #000;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+/* Cards */
+.card {
+  background: #020617;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 20px;
+  color: #e6eef8;
+}
+
+/* Account Card */
+.account-card {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+}
+
+.account-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance h2 {
+  margin: 10px 0;
+}
+
+.balance span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Actions */
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-btn {
+  background: #f3f4f6;
+  border: none;
+  color: #000;
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Transactions */
+.transactions {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.transactions li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #1e293b;
+  padding: 10px 0;
+  color: #000;
+}
+
+.transactions li strong {
+  color: #000;
+}
+
+.transactions span {
+  font-size: 12px;
+  color: #000;
+}
+
+.transactions-card h3 {
+  color: #000;
+}
+
+.credit {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.debit {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.view-btn {
+  margin-top: 15px;
+  background: #4f46e5;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #4338ca;
+}
