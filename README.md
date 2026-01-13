@@ -133,14 +133,14 @@ banking-application/
 
 | Login | Dashboard |
 |-------|-----------|
-| ![](screenshots/3.png) | ![](screenshots/5.png) |
+| ![](screenshot/3.png) | ![](screenshot/5.png) |
 
 | Transactions | Unique Features |
 |-------------|---------|
-| ![](screenshots/4.png) | ![](screenshots/2.png) |
+| ![](screenshot/4.png) | ![](screenshot/2.png) |
 
 | Account Creation |
 |-------------|
-| ![](screenshots/1.png) |
+| ![](screenshot/1.png) |
 
 
