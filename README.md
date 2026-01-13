@@ -103,7 +103,7 @@ banking-application/
    ```bash
    npm run dev
    
-Frontend will start on:
+5. Frontend will start on:
    ```bash
    http://localhost:5173
 
