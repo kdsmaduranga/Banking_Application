@@ -124,7 +124,14 @@ banking-application/
 
 - [Samitha Kahawita](https://github.com/kdsmaduranga) - Frontend
 - [Dilan Amantha](https://github.com/lynx7843) - Backend
-- []
+- [Sasrika Kaumadi](https://github.com/wsklwithana)
+- [Kavindu Fernando](https://github.com/pktfernando)
+- [Sayuni](https://github.com/SayuniDHS)
+- [Esandi](https://github.com/EsandiWijesinghe)
+- [Upeka](https://github.com/upeka200163)
+- [Kumudhitha](https://github.com/KumudithaRupz)
+- [Buddhima Deshan](https://github.com/Ukdbdeshan)
+- [Sachintha](https://github.com/Sachinthap)
 
 
 ---
