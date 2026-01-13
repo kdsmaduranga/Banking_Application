@@ -40,24 +40,21 @@ The system is built using **Spring Boot** for the backend, **MongoDB** for data 
 
 ## 📂 Project Structure
 
-banking-application/ <br>
-│ <br>
-├── backend/ <br>
-│ ├── src/main/java/com/example/backend <br>
-│ ├── src/test/java/com/example/backend <br>
-│ ├── src/main/resources <br>
-│ └── pom.xml <br>
-│ <br>
-├── node_modules/... <br>
-│ <br>
-├── public/ <br>
-│ <br>
-├── src/ <br>
-│ ├── assets/ <br>
-│ ├── assets/ <br>
-│ └── pages <br>
-│ <br>
-└── README.md <br>
+```text
+banking-application/
+│
+├── backend/
+│   ├── src/main/java/com/banking/app
+│   ├── src/main/resources
+│   └── pom.xml
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+└── README.md
+```
 
 ## ⚙️ Installation & Setup
 
@@ -127,12 +124,16 @@ banking-application/ <br>
 
 ## 📷 Screenshots
 
-![](screenshot/1.png)
-![]screenshot/2.png)
-![]screenshot/3.png)
-![]screenshot/4.png)
-![]screenshot/5.png)
-![]screenshot/6.png)
+| Login | Dashboard |
+|-------|-----------|
+| ![](screenshots/3.png) | ![](screenshots/5.png) |
 
+| Transactions | Unique Features |
+|-------------|---------|
+| ![](screenshots/4.png) | ![](screenshots/2.png) |
+
+| Account Creation |
+|-------------|
+| ![](screenshots/1.png) |
 
 
