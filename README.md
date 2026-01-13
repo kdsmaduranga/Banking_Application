@@ -44,14 +44,21 @@ The system is built using **Spring Boot** for the backend, **MongoDB** for data 
 banking-application/
 │
 ├── backend/
-│   ├── src/main/java/com/banking/app
+│   ├── src/main/java/com/example/backend
+│   ├── src/test/java/com/example/backend
 │   ├── src/main/resources
 │   └── pom.xml
 │
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
+├── node_modules/...
+│
+├── public/
+│
+├── screenshot/
+│
+├── src/
+│   ├── assets/
+│   ├── images/
+│   └── pages
 │
 └── README.md
 ```
