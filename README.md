@@ -40,24 +40,24 @@ The system is built using **Spring Boot** for the backend, **MongoDB** for data 
 
 ## 📂 Project Structure
 
-banking-application/
-│
-├── backend/
-│ ├── src/main/java/com/example/backend
-│ ├── src/test/java/com/example/backend
-│ ├── src/main/resources
-│ └── pom.xml
-│
-├── node_modules/...
-│
-├── public/
-│
-├── src/
-│ ├── assets/
-│ ├── assets/
-│ └── pages
-│
-└── README.md
+banking-application/ <br>
+│ <br>
+├── backend/ <br>
+│ ├── src/main/java/com/example/backend <br>
+│ ├── src/test/java/com/example/backend <br>
+│ ├── src/main/resources <br>
+│ └── pom.xml <br>
+│ <br>
+├── node_modules/... <br>
+│ <br>
+├── public/ <br>
+│ <br>
+├── src/ <br>
+│ ├── assets/ <br>
+│ ├── assets/ <br>
+│ └── pages <br>
+│ <br>
+└── README.md <br>
 
 ## ⚙️ Installation & Setup
 
@@ -127,12 +127,12 @@ banking-application/
 
 ## 📷 Screenshots
 
-screenshot/1.png
-screenshot/2.png
-screenshot/3.png
-screenshot/4.png
-screenshot/5.png
-screenshot/6.png
+![](screenshot/1.png)
+![]screenshot/2.png)
+![]screenshot/3.png)
+![]screenshot/4.png)
+![]screenshot/5.png)
+![]screenshot/6.png)
 
 
 
