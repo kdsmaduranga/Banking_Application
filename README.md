@@ -168,7 +168,7 @@ Banking-application/
 | ![](screenshot/4.png) | ![](screenshot/2.png) |
 
 | Account Creation | | Manager Dashboard |
-|-------------|
+|-------|-----------|
 | ![](screenshot/1.png) | ![](screenshot/6.png) |
 
 
