@@ -172,3 +172,5 @@ Banking-application/
 | ![](screenshot/1.png) | ![](screenshot/6.png) |
 
 
+## 📄 License
+This project is licensed under the Apache-2.0 License.
