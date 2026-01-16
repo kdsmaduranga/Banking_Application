@@ -3,7 +3,6 @@
 A full-stack banking web application designed to handle core banking operations such as user authentication, account management, transactions, and balance tracking.  
 The system is built using **Spring Boot** for the backend, **MongoDB** for data storage, and **React** for the frontend.
 
----
 
 ## ✨ Features
 
@@ -16,7 +15,6 @@ The system is built using **Spring Boot** for the backend, **MongoDB** for data 
 - Responsive User Interface
 - RESTful API Architecture
 
----
 
 ## 🛠️ Tech Stack
 
@@ -36,31 +34,60 @@ The system is built using **Spring Boot** for the backend, **MongoDB** for data 
 ### Database
 - **MongoDB**
 
----
 
 ## 📂 Project Structure
 
 ```text
-banking-application/
+Banking-application/
 │
-├── backend/
-│   ├── src/main/java/com/example/backend
-│   ├── src/test/java/com/example/backend
-│   ├── src/main/resources
-│   └── pom.xml
+├── Banking_Application-main/
+│   ├── backend/
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   ├── src
+│   │   ├── target
+│   │   ├── .gitattributes
+│   │   ├── .gitignore
+│   │   ├── mvnw
+│   │   ├── mvnw.cmd
+│   │   └── pom.xml
+│   │
+│   ├── chatbot/
+│   │   └── chatbot/
+│   │       ├── .idea
+│   │       ├── .mvn
+│   │       ├── src
+│   │       ├── target
+│   │       ├── .gitattributes
+│   │       ├── .gitignore
+│   │       ├── HELP.md
+│   │       ├── mvnw
+│   │       ├── mvnw.cmd
+│   │       └── pom.xml
+│   │
+│   ├── node_modules/..
+│   │
+│   ├── public/
+│   │
+│   └── src/...
 │
-├── node_modules/...
-│
-├── public/
+├── node_modules/
+│   ├── @google
+│   ├── lucide-react
+│   ├── react
+│   └── .package-lock.json
 │
 ├── screenshot/
 │
 ├── src/
-│   ├── assets/
-│   ├── images/
-│   └── pages
 │
-└── README.md
+├── .gitignore
+├── estlint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
 ```
 
 ## ⚙️ Installation & Setup
@@ -71,7 +98,6 @@ banking-application/
 - MongoDB
 - Git
 
----
 
 ### Backend Setup (Spring boot)
 
@@ -89,7 +115,6 @@ banking-application/
 
 5. Run the Application
 
----
 
 ### Frontend Setup (React)
 
@@ -111,21 +136,19 @@ banking-application/
    ```bash
    http://localhost:5173
 
----
    
 ## 🔐 API Security
 
 - Uses Spring Security
 - Passwords are encrypted
 
----
 
 ## 🤝 Contributing
 
-- [Samitha Kahawita](https://github.com/kdsmaduranga) - Frontend
-- [Dilan Amantha](https://github.com/lynx7843) - Backend
-- [Sasrika Kaumadi](https://github.com/wsklwithana)
-- [Kavindu Fernando](https://github.com/pktfernando)
+- [Kahawita Maduranga](https://github.com/kdsmaduranga) - Backend and Database Configuration
+- [Dilan Amantha](https://github.com/lynx7843) - Frontend
+- [Sasrika Kaumadi](https://github.com/wsklwithana) 
+- [Kavindu Fernando](https://github.com/pktfernando) 
 - [Sayuni](https://github.com/SayuniDHS)
 - [Esandi](https://github.com/EsandiWijesinghe)
 - [Upeka](https://github.com/upeka200163)
@@ -134,20 +157,18 @@ banking-application/
 - [Sachintha](https://github.com/Sachinthap)
 
 
----
-
 ## 📷 Screenshots
 
 | Login | Dashboard |
 |-------|-----------|
 | ![](screenshot/3.png) | ![](screenshot/5.png) |
 
-| Transactions | Unique Features |
+| Customer | Unique Features |
 |-------------|---------|
 | ![](screenshot/4.png) | ![](screenshot/2.png) |
 
-| Account Creation |
+| Account Creation | | Manager Dashboard |
 |-------------|
-| ![](screenshot/1.png) |
+| ![](screenshot/1.png) | ![](screenshot/6.png) |
 
 
