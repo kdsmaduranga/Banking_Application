@@ -6,33 +6,33 @@ The system is built using **Spring Boot** for the backend, **MongoDB** for data 
 
 ## ✨ Features
 
-- Account Creation 
-- Authentication
-- Account Management
-- Fund Transfers
-- Transaction History
-- Real-time Balance Updates
-- Responsive User Interface
-- RESTful API Architecture
+- Account Creation. 
+- Authentication.
+- Account Management.
+- Fund Transfers.
+- Transaction History.
+- Real-time Balance Updates.
+- Responsive User Interface.
+- RESTful API Architecture.
 
 
 ## 🛠️ Tech Stack
 
 ### Backend
-- **Java**
-- **Spring Boot**
-- **Spring Security**
-- **Spring Data MongoDB**
-- **REST APIs**
+- **Java**.
+- **Spring Boot**.
+- **Spring Security**.
+- **Spring Data MongoDB**.
+- **REST APIs**.
 
 ### Frontend
-- **React**
-- **JavaScript**
-- **HTML5**
-- **CSS**
+- **React**.
+- **JavaScript**.
+- **HTML5**.
+- **CSS**.
 
 ### Database
-- **MongoDB**
+- **MongoDB**.
 
 
 ## 📂 Project Structure
@@ -101,13 +101,13 @@ Banking-application/
 
 ### Backend Setup (Spring boot)
 
-1. Clone the repository:
+1. Clone the repository:-
    ```bash
    https://github.com/kdsmaduranga/Banking_Application.git
 
 2. Open the folder using an IDE such as IntelliJ
 
-3. Navigate to backend folder:
+3. Navigate to backend folder:-
    ```bash
    cd backend
    
